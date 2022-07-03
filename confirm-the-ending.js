@@ -35,3 +35,22 @@ function confirmEnding(str, target) {
 
 confirmEnding("Connor", "n");
 
+//S3
+
+function confirmEnding(str, target) { 
+  
+  let endWith = new RegExp(target + "$", "i");
+
+  return endWith.test(str);//true
+}
+
+confirmEnding("Congratulation", "on");
+
+
+//S4
+function confirmEnding(str, target) { 
+  
+  return str.slice(-target.length) === target;//false
+}
+
+confirmEnding("Open sesame", "sage");
