@@ -18,9 +18,20 @@ confirmEnding("Abstraction", "action") should return true.
 Your code should not use the built-in method .endsWith() to solve the challenge.
 */
 
+
+//S1
 function confirmEnding(str, target) {
-  let endWith = str.slice(str.length - target.length)
-  return endWith === target;
+  let endWith = str.slice(str.length - target.length);
+  return endWith === target; //true
 }
 
 confirmEnding("Bastian", "n");
+
+
+//S2
+function confirmEnding(str, target) { 
+  return str.slice(str.length - target.length) === target; //false
+}
+
+confirmEnding("Connor", "n");
+
