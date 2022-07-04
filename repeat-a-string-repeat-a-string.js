@@ -12,14 +12,14 @@ The built-in repeat() method should not be used.
 repeatStringNumTimes("abc", 0) should return "".
 */
 //S1
-// function repeatStringNumTimes(str, num) {
-//   let newStr = "";
-//   for (let i = 0; i < num; i++) {
-//     newStr += str;
-//   }
-//   return newStr;
-// }
-// console.log(repeatStringNumTimes("abc", 4));
+function repeatStringNumTimes(str, num) {
+  let newStr = "";
+  for (let i = 0; i < num; i++) {
+    newStr += str;
+  }
+  return newStr;
+}
+console.log(repeatStringNumTimes("*", 2));
 
 //S2
 function repeatStringNumTimes(str, num) {
@@ -31,4 +31,25 @@ function repeatStringNumTimes(str, num) {
   return repeatString;
 }
 
-console.log(repeatStringNumTimes("abc", 4));
+console.log(repeatStringNumTimes("abc", 3));
+
+//S3
+function repeatStringNumTimes(str, num) {
+  if(num < 1) {
+    return "";
+  }else {
+    return str + repeatStringNumTimes(str, num - 1);
+  }
+}
+console.log(repeatStringNumTimes("abc", 3));
+
+
+//S4 
+function repeatStringNumTimes(str, num){
+  return num > 0 ? str + repeatStringNumTimes(str, num - 1) : "";
+}
+
+console.log(repeatStringNumTimes("abc", 3));
+
+
+
