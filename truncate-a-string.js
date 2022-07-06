@@ -9,8 +9,19 @@ truncateString("A-", 1) should return the string A....
 truncateString("Absolutely Longer", 2) should return the string Ab....
 */
 
+//S1
 function truncateString(str, num) {
   return str.length <= num ? str : str.slice(0, num) + "...";
 }
 
 truncateString("A-tisket a-tasket A green and yellow basket", 8);
+
+//S2
+function truncateString(str, num) {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
+  }
+  return str;
+}
+
+truncateString("Peter Piper picked a peck of pickled peppers", 11);
