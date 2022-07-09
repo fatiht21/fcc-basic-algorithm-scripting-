@@ -8,9 +8,24 @@ titleCase("sHoRt AnD sToUt") should return the string Short And Stout.
 titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return the string Here Is My Handle Here Is My Spout.
 */
 
+//s1
 function titleCase(str) {
-  return str.toLowerCase().split(" ").map((word) => {
-    return word[0].toUpperCase() + word.slice(1)}).join(" ");
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map((word) => {
+      return word[0].toUpperCase() + word.slice(1);
+    })
+    .join(" ");
 }
 
 titleCase("I'm a little tea pot");
+
+//s2
+function titleCase(str) {
+  return str
+    .toLowerCase()
+    .replace(/(^|\s)\S/g, (firstLetter) => firstLetter.toUpperCase());
+}
+
+titleCase("HERE IS MY HANDLE HERE IS MY SPOUT");
