@@ -12,10 +12,25 @@ The first array should remain the same after the function runs.
 The second array should remain the same after the function runs.
 */
 
+//s1
 function frankenSplice(arr1, arr2, n) {
   let combArray = arr2.slice();
   combArray.splice(n, 0, ...arr1);
   return combArray;
 }
 
-console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
+console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1)); //[4, 1, 2, 3, 5]
+
+//s2
+function frankenSplice(arr1, arr2, n) {
+  let combArr = arr2.slice();
+
+  for (let i = 0; i < arr1.length; i++) {
+    combArr.splice(n, 0, arr1[i]);
+    n++;
+  }
+
+  return combArr;
+}
+
+frankenSplice([1, 2], ["a", "b"], 1); //["a", 1, 2, "b"]
